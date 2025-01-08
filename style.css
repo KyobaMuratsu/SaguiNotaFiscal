@@ -1,0 +1,124 @@
+.main{
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.align{
+    justify-content: center;
+    display: flex;
+    flex-direction: row;
+}
+
+.container{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 10px;
+    width: 30%;
+}
+
+.prestadorForm{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+    font-size: 1.2em;
+}
+
+.prestadorForm input{
+    font-size: 0.7em;
+}
+
+.tomadorForm{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+    font-size: 1.2em;
+}
+
+.tomadorForm input{
+    font-size: 0.7em;
+}
+
+.discriminacaoClass{
+    margin-top: 15px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 10px;
+    text-align: center;
+    font-size: 1.2em;
+}
+
+.formContainer{
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    text-align: center;
+}
+
+.title{
+    font-size: 2em;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.valorClass {
+    display: flex;
+    flex-direction: column;
+    font-size: 1.2em;
+}
+
+.discriminacaoTextClass{
+   height: 110px;
+}
+
+header {
+    background-color: #4CAF50;
+    color: white;
+    padding: 20px 0;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1); 
+}
+
+.header-container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header h1 {
+    font-size: 24px;
+    font-weight: bold;
+    margin: 0;
+}
+
+nav .nav-links {
+    display: flex;
+    gap: 20px;
+    list-style: none;
+}
+
+nav .nav-links li {
+    margin: 0;
+}
+
+nav .nav-links li a {
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    text-decoration: none;
+    transition: color 0.3s ease-in-out;
+}
+
+nav .nav-links li a:hover {
+    color: #ddd; 
+}
+
