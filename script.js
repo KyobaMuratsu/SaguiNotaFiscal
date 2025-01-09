@@ -257,7 +257,7 @@ function gerarFormularioDiscriminacaoValor() {
                         <input id="PorcentagemISSQNId">
                     </section>
                 </div>
-                <button onclick="gerarNotaFiscalCompleta()">Gerar Nota Fiscal Completa</button>`
+                <input type="button" value="Gerar Nota Fiscal Completa" onclick="gerarNotaFiscalCompleta()">`
 
 }
 
