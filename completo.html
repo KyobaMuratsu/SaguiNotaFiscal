@@ -22,18 +22,15 @@
     <main class="main">
         <div class="container" id="containerId">
             <section class="prestadorForm">
-                <div>
-                    <h1 class="title">Prestador</h1>
-                    <input type="button" id="cpfCheckboxPrestadorId" value="CPF" onclick="cpf()">
-                    <input type="button" id="cnpjCheckboxPrestadorId" value="CNPJ" onclick="cnpj()">
+                <div id="formDinamic">
+                    <h1 class="title" id="titleId">Prestador</h1>
+                    <input type="button" id="cpfButtonPrestadorId" value="CPF" onclick="cpf()">
+                    <input type="button" id="cnpjButtonPrestadorId" value="CNPJ" onclick="cnpj()">
                 </div>
             </section>
-            <section class="formContainer">
-                <div id="formPrestador"  class="prestadorForm"></div>
-            </section>
-                <div class="formContainer">
-                    <input id="confirmButton" type="button" value="Confirmar Prestador" onclick="" hidden>
-                </div>
+                <section class="formContainer">
+                    <div id="formPrestador"  class="prestadorForm"></div>
+                </section>
             </div>
         </div>
     </main>
