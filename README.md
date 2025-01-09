@@ -11,6 +11,9 @@ Ao selecionar uma dessas opções, abrirá um formulário com o restante dos cam
 Após preencher ambos, a tela de discriminação de serviços será exibida.  
 Após preenchê-la e gerar a nota fiscal, ela será gerada completa.
 
+## CPF CNPJ e Numero de Telefone
+Nesses campos evite usar os simbolos como o - . / para que as funções funcionemm corretamente
+
 ## Referências
 - [Site Nota Fiscal do Município de Americana](https://nfse.americana.sp.gov.br/exemplo.aspx)  
 - [API usada para consulta de informações por CEP e CNPJ](https://github.com/WillianAgostini/brasilapi-js)
