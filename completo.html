@@ -20,71 +20,19 @@
         </div>
     </header>
     <main class="main">
-        <div class="align">
-            <div class="container">
-                <div class="formContainer">
-                    <section class="prestadorForm">
-                        <h1 class="title">Prestador</h1>
-                        <label for="nomeRazao">Nome/Razão Social</label>
-                        <input type="text" id="nomePrestadorId">
-                        <label for="nomeFantasia">Nome Fantasia</label>
-                        <input type="text" id="nomeFantasiaPrestadorId">
-                        <label for="telefone">Telefone</label>
-                        <input type="text" id="telefonePrestadorId">
-                        <label for="email">E-mail</label>
-                        <input type="text" id="emailPrestadorId">
-                        <label for="cpfcnpj">CPF ou CNPJ</label>
-                        <input type="text" id="cpfCnpjPrestadorId">
-                        <label for="cepId">CEP</label>
-                        <input type="text" id="cepPrestadorId">
-                    </section>
-                    <section class="tomadorForm">
-                        <h1 class="title">Tomador</h1>
-                        <label for="nomeRazao">Nome/Razão Social</label>
-                        <input type="text" id="nomeTomadorId">
-                        <label for="nomeFantasia">Nome Fantasia</label>
-                        <input type="text" id="nomeFantasiaTomadorId">
-                        <label for="telefone">Telefone</label>
-                        <input type="text" id="TelefoneTomadorId">
-                        <label for="email">E-mail</label>
-                        <input type="text" id="emailTomadorId">
-                        <label for="cpfcnpj">CPF ou CNPJ</label>
-                        <input type="text" id="cpfCnpjTomadorId">
-                        <label for="cepId">CEP</label>
-                        <input type="text" id="cepTomadorId">
-                    </section>
+        <div class="container" id="containerId">
+            <section class="prestadorForm">
+                <div>
+                    <h1 class="title">Prestador</h1>
+                    <input type="button" id="cpfCheckboxPrestadorId" value="CPF" onclick="cpf()">
+                    <input type="button" id="cnpjCheckboxPrestadorId" value="CNPJ" onclick="cnpj()">
                 </div>
-                <section class="discriminacaoClass">
-                    <label for="discriminação">Discriminação dos Serviços</label>
-                    <textarea id="discriminacaoId" class="discriminacaoTextClass"></textarea>
-                </section>
+            </section>
+            <section class="formContainer">
+                <div id="formPrestador"  class="prestadorForm"></div>
+            </section>
                 <div class="formContainer">
-                    <section class="valorClass">
-                        <label for="valor">Valor da Venda</label>
-                        <input id="valorVendaId">
-                    </section>
-                    <section class="valorClass">
-                        <label for="valor">Porcentagem IRPF</label>
-                        <input id="PorcentagemIRPFId">
-                    </section>
-                    <section class="valorClass">
-                        <label for="valor">Porcentagem PIS</label>
-                        <input id="PorcentagemPISId">
-                    </section>
-                </div>
-                <div class="formContainer">
-                    <section class="valorClass">
-                        <label for="valor">Porcentagem COFINS</label>
-                        <input id="PorcentagemCOFINSId">
-                    </section>
-                    <section class="valorClass">
-                        <label for="valor">Porcentagem INSS</label>
-                        <input id="PorcentagemINSSId">
-                    </section>
-                    <section class="valorClass">
-                        <label for="valor">Porcentagem ISSQN</label>
-                        <input id="PorcentagemISSQNId">
-                    </section>
+                    <input id="confirmButton" type="button" value="Confirmar Prestador" onclick="" hidden>
                 </div>
             </div>
         </div>

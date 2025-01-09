@@ -1,4 +1,16 @@
-async function criarNotaFiscal() {
+var nomeRazaoPrestador = "";
+var nomeRazaoTomador = "";
+var telefonePrestador = "";
+var telefoneTomador = "";
+var emailPrestador = "";
+var emailTomador = "";
+var cpfCnpjPrestador = "";
+var cpfCnpjTomador = "";
+var cepPrestador = "";
+var cepTomador = "";
+
+
+async function criarNotaFiscalSimplificado() {
     const discriminacao = document.getElementById("discriminacaoId").value;
     const valorVenda = parseFloat(document.getElementById("valorVendaId").value) || 0;
     const irpf = parseFloat(document.getElementById("PorcentagemIRPFId").value) || 0;
@@ -50,6 +62,49 @@ async function consultarCNPJ() {
     }
 }
 
-async function verificarCPFCNPJ() {
-    
+function cpf() {
+    const buttonCpf = document.getElementById("cpfCheckboxPrestadorId");
+    const buttonCnpj = document.getElementById("cnpjCheckboxPrestadorId");
+
+    const formularioPrestador = document.getElementById("formPrestador");
+    const buttonConfirm = document.getElementById("confirmButton");
+
+    buttonConfirm.hidden = false;
+    buttonCnpj.hidden = true;
+    buttonCpf.hidden = true;
+
+    formularioPrestador.innerHTML = `
+                    <label for="nomeRazao">Nome/Razão Social</label>
+                    <input type="text" id="nomePrestadorId">
+                    <label for="nomeFantasia">Nome Fantasia</label>
+                    <input type="text" id="nomeFantasiaPrestadorId">
+                    <label for="telefone">Telefone</label>
+                    <input type="text" id="telefonePrestadorId">
+                    <label for="email">E-mail</label>
+                    <input type="text" id="emailPrestadorId">
+                    <label for="cpfcnpj">CPF</label>
+                    <input type="text" id="cpfPrestadorId">
+                    <label for="cepId">CEP</label>
+                    <input type="text" id="cepPrestadorId">`
 }
+
+async function cnpj() {
+    const buttonCpf = document.getElementById("cpfCheckboxPrestadorId");
+    const buttonCnpj = document.getElementById("cnpjCheckboxPrestadorId");
+
+    const formularioPrestador = document.getElementById("formPrestador");
+    const buttonConfirm = document.getElementById("confirmButton");
+
+    buttonConfirm.hidden = false;
+    buttonCnpj.hidden = true;
+    buttonCpf.hidden = true;
+
+    formularioPrestador.innerHTML = `
+                    <label for="cpfcnpj">CNPJ</label>
+                    <input type="text" id="cnpjPrestadorId">
+                    <label for="telefone">Telefone</label>
+                    <input type="text" id="telefonePrestadorId">
+                    <label for="email">E-mail</label>
+                    <input type="text" id="emailPrestadorId">`
+}
+
