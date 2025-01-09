@@ -30,7 +30,7 @@
                         <input type="text" id="cepTomadorId">
                     </section>
 
-<section class="discriminacaoClass">
+<section class="discriminacaoClass">    
                     <label for="discriminação">Discriminação dos Serviços</label>
                     <textarea id="discriminacaoId" class="discriminacaoTextClass"></textarea>
                 </section>

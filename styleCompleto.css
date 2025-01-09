@@ -34,8 +34,7 @@
     flex-direction: column;
     gap: 10px;
     text-align: center;
-    font-size: 1.2em;
-    visibility: hidden;
+    font-size: 1em;
 }
 
 .formContainer{
@@ -60,7 +59,7 @@
     flex-wrap: wrap;
     gap: 10px;
     width: 30%;
-    font-size: 1.2em;
+    font-size: 1em;
 }
 
 .valorClass input {
@@ -145,3 +144,53 @@ input[type="button"]:hover {
 .notaFiscal #text{
     width: 100%;
 }
+
+.nota-fiscal {
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    max-width: 600px;
+    margin: 20px auto;
+}
+
+.nota-titulo {
+    text-align: center;
+    color: #333;
+    font-size: 24px;
+}
+
+.nota-secao {
+    margin-bottom: 20px;
+    text-align: justify;
+}
+
+.nota-secao h3 {
+    color: #555;
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.nota-secao p {
+    color: #666;
+    font-size: 14px;
+    margin: 5px 0;
+}
+
+.nota-secao strong {
+    color: #333;
+}
+
+.nota-rodape {
+    text-align: center;
+    font-style: italic;
+    color: #888;
+}
+
+hr {
+    border: 0;
+    border-top: 1px solid #ddd;
+    margin: 20px 0;
+}
+
