@@ -14,3 +14,5 @@ Após preenchê-la e gerar a nota fiscal, ela será gerada completa.
 ## Referências
 - [Site Nota Fiscal do Município de Americana](https://nfse.americana.sp.gov.br/exemplo.aspx)  
 - [API usada para consulta de informações por CEP e CNPJ](https://github.com/WillianAgostini/brasilapi-js)
+
+- [Site Pronto](https://geradordenotafiscal.netlify.app)
