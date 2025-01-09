@@ -20,6 +20,69 @@ var ufTomador = "";
 
 var prestadorOuTomador = "";
 
+function validarCPF(cpf) {
+    const regexCPF = /^(?:\d{3}\.){2}\d{3}-\d{2}$/;
+    return regexCPF.test(cpf);
+}
+
+function validarCNPJ(cnpj) {
+    const regexCNPJ = /^[0-9]{2}\.[0-9]{3}\.[0-9]{3}\/[0-9]{4}-[0-9]{2}$/;
+    return regexCNPJ.test(cnpj);
+}
+
+function validarTelefone(telefone) {
+    const regexTelefone = /^\(\d{2}\) \d{5}-\d{4}$/;
+    return regexTelefone.test(telefone);
+}
+
+function validarEmail(email) {
+    const regexEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return regexEmail.test(email);
+}
+
+function validarCEP(cep) {
+    const regexCEP = /^\d{5}-\d{3}$/;
+    return regexCEP.test(cep);
+}
+
+function formatarCPF(cpf) {
+    return cpf.replace(/\D/g, '')
+              .replace(/(\d{3})(\d)/, '$1.$2')
+              .replace(/(\d{3})(\d)/, '$1.$2') 
+              .replace(/(\d{3})(\d{1,2})$/, '$1-$2'); 
+}
+
+function formatarCNPJ(cnpj) {
+    return cnpj.replace(/\D/g, '') 
+               .replace(/(\d{2})(\d)/, '$1.$2') 
+               .replace(/(\d{3})(\d)/, '$1.$2')
+               .replace(/(\d{3})(\d)/, '$1/$2') 
+               .replace(/(\d{4})(\d{1,2})$/, '$1-$2'); 
+}
+
+function formatarTelefone(telefone) {
+    return telefone.replace(/\D/g, '') 
+                   .replace(/(\d{2})(\d)/, '($1) $2') 
+                   .replace(/(\d{5})(\d{1,4})$/, '$1-$2'); 
+}
+
+function formatarCampos() {
+    const cpfInput = document.getElementById("cpfPrestadorId");
+    const cnpjInput = document.getElementById("cnpjPrestadorId");
+    const telefoneInput = document.getElementById("telefonePrestadorId");
+
+    cpfInput.addEventListener("input", function(event) {
+        this.value = formatarCPF(this.value);
+    });
+
+    cnpjInput.addEventListener("input", function(event) {
+        this.value = formatarCNPJ(this.value);
+    });
+
+    telefoneInput.addEventListener("input", function(event) {
+        this.value = formatarTelefone(this.value);
+    });
+}
 
 async function criarNotaFiscalSimplificado() {
     const discriminacao = document.getElementById("discriminacaoId").value;
@@ -151,11 +214,27 @@ async function cnpj() {
 
 function confirmarFormulario(prestadorOuTomador) {
     const cpfCnpjPrestadorTomador = document.getElementById("cpfcnpj").textContent;
+    
 
     if(prestadorOuTomador == "Prestador" && cpfCnpjPrestadorTomador === "CNPJ"){
         telefonePrestador = document.getElementById("telefonePrestadorId").value;
         emailPrestador = document.getElementById("emailPrestadorId").value;
         cpfCnpjPrestador = document.getElementById("cnpjPrestadorId").value;
+
+        if (prestadorOuTomador === "Prestador" && !validarCNPJ(cpfCnpjPrestadorTomador)) {
+            alert("CNPJ inválido, tente sem os simbolos como / - .");
+            return;
+        }
+
+        if (!validarTelefone(telefonePrestador)) {
+            alert("Telefone inválido, tente sem os simbolos como / - .");
+            return;
+        }
+
+        if (!validarEmail(emailPrestador)) {
+            alert("Email inválido, tente sem os simbolos como / - .");
+            return;
+        }
 
         consultarCNPJ();
         alert("Dados do Prestador confirmados!");
@@ -169,6 +248,26 @@ function confirmarFormulario(prestadorOuTomador) {
         cpfCnpjPrestador = document.getElementById("cpfPrestadorId").value;
         cepPrestador = document.getElementById("cepPrestadorId").value;
 
+        if (prestadorOuTomador === "Prestador" && !validarCPF(cpfCnpjPrestadorTomador)) {
+            alert("CPF inválido, tente sem os simbolos como / - .");
+            return;
+        }
+
+        if (!validarTelefone(telefonePrestador)) {
+            alert("Telefone inválido, tente sem os simbolos como / - .");
+            return;
+        }
+
+        if (!validarEmail(emailPrestador)) {
+            alert("Email inválido, tente sem os simbolos como / - .");
+            return;
+        }
+
+        if (!validarCEP(cepPrestador)) {
+            alert("CEP inválido, tente sem os simbolos como / - .");
+            return;
+        }
+
         alert("Dados do Prestador confirmados!");
         consultarCEP();
         limparFormulario();
@@ -178,6 +277,21 @@ function confirmarFormulario(prestadorOuTomador) {
         telefoneTomador = document.getElementById("telefoneTomadorId").value;
         emailTomador = document.getElementById("emailTomadorId").value;
         cpfCnpjTomador = document.getElementById("cnpjTomadorId").value;
+
+        if (prestadorOuTomador === "Tomador" && !validarCNPJ(cpfCnpjPrestadorTomador)) {
+            alert("CNPJ inválido, tente sem os simbolos como / - .");
+            return;
+        }
+
+        if (!validarTelefone(telefoneTomador)) {
+            alert("Telefone inválido, tente sem os simbolos como / - .");
+            return;
+        }
+
+        if (!validarEmail(emailTomador)) {
+            alert("Email inválido, tente sem os simbolos como / - .");
+            return;
+        }
 
         alert("Dados do Prestador confirmados!");
         consultarCNPJ();
@@ -191,6 +305,26 @@ function confirmarFormulario(prestadorOuTomador) {
         emailTomador = document.getElementById("emailTomadorId").value;
         cpfCnpjTomador = document.getElementById("cpfTomadorId").value;
         cepTomador = document.getElementById("cepTomadorId").value;
+
+        if (prestadorOuTomador === "Tomador" && !validarCPF(cpfCnpjPrestadorTomador)) {
+            alert("CPF inválido, tente sem os simbolos como / - .");
+            return;
+        }
+
+        if (!validarTelefone(telefoneTomador)) {
+            alert("Telefone inválido, tente sem os simbolos como / - .");
+            return;
+        }
+
+        if (!validarEmail(emailTomador)) {
+            alert("Email inválido, tente sem os simbolos como / - .");
+            return;
+        }
+
+        if (!validarCEP(cepTomador)) {
+            alert("CEP inválido, tente sem os simbolos como / - .");
+            return;
+        }
 
         alert("Dados do Tomador confirmados!");
         consultarCEP();
